@@ -1,0 +1,26 @@
+.calendar-day {
+	&--separator {
+		padding: 1.2em 0 .5em;
+		font-size: 1em;
+		text-align: center;
+		p,
+		&:before,
+		&:after {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		p {
+			margin: 0;
+			padding: 0 .5em;
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			height: 1px;
+			background-color: rgba(200, 200, 200, .5);
+			width: 30%;
+		}
+	}
+}

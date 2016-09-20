@@ -1,8 +1,8 @@
 .task {
 
 	font-size: 1.5em;
-	box-shadow: 0 0 1px rgba(0,0,0,.3);
-
+	// box-shadow: 0 0 1px rgba(0,0,0,.3);
+	border-bottom: 1px solid rgba(0,0,0,.2);
 	&._active {
 
 		.task__description {
@@ -16,6 +16,7 @@
 			margin: 0;
 			padding: .1em 0;
 			padding-left: .5em;
+			font-weight: 400;
 		}
 	}
 
