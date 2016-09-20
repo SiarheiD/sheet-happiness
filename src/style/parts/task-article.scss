@@ -1,0 +1,29 @@
+.task {
+
+	font-size: 1.5em;
+	box-shadow: 0 0 1px rgba(0,0,0,.3);
+
+	&._active {
+
+		.task__description {
+			height: auto;
+		}
+	}
+
+	&__title {
+		h3 {
+			font-size: 1.5em;
+			margin: 0;
+			padding: .1em 0;
+			padding-left: .5em;
+		}
+	}
+
+	&__description {
+		height: 0;
+		overflow: hidden;
+		p {
+			font-size: 1em;
+		}
+	}
+}

@@ -1,0 +1,79 @@
+.buttons-set {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	font-size: 1em;
+	padding: 1em;
+
+	&__button {
+		position: relative;
+		width: 2em;
+		font-size: 2em;
+		padding: 0;
+		border: none;
+		box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+		border-radius: 50%;
+		background-color: transparent;
+		transition: transform .2s;
+
+		&:not(:last-child) {
+			margin-right: .8em;
+		}
+
+		&:before {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-family: FontAwesome;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+
+		&--edit {
+			transform: translateY(200%);
+			&:before {
+				content: '\f040';
+			}
+		}
+
+		&--delete {
+			transform: translateY(200%);
+			&:before {
+				content: '\f014';
+			}
+		}
+
+		&--add {
+			transform: scale(1.5) translate(-50%, -50%);
+			color: #fff;
+			background-color: #aaa;
+			&:before {
+				content: '\f067';
+			}
+		}
+	}
+
+	&._show-all {
+		.buttons-set__button {
+			&--edit {
+				transform: none;
+			}
+
+			&--delete {
+				transform: none;
+			}
+
+			&--add {
+				transform: none;
+				color: #fff;
+				background-color: #aaa;
+			}
+		}
+	}
+}
