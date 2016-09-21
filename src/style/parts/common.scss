@@ -3,6 +3,22 @@ html {
 	font-family: 'PT Sans', Verdana, Arial, sans-serif;
 }
 
+html,
+body,
+.wrapper {
+	height: 100%;
+}
+
 .wrapper {
 	padding: 1em;
+}
+
+.button {
+	background: transparent;
+	border: none;
+
+	&:focus {
+		outline: none;
+		background-color: none;
+	}
 }

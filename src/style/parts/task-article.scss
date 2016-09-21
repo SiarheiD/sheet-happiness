@@ -1,30 +1,44 @@
 .task {
-
+	.container {
+		padding: 0 1em;
+	}
 	font-size: 1.5em;
-	// box-shadow: 0 0 1px rgba(0,0,0,.3);
 	border-bottom: 1px solid rgba(0,0,0,.2);
+	margin-bottom: .5em;
+
 	&._active {
+		border-color: #f34f30;
 
 		.task__description {
 			height: auto;
+			width: auto;
+			transition: height .5s;
+			p {
+				white-space: normal;
+			}
 		}
 	}
 
-	&__title {
-		h3 {
-			font-size: 1.5em;
-			margin: 0;
-			padding: .1em 0;
-			padding-left: .5em;
-			font-weight: 400;
-		}
-	}
+	// &__title {
+	// 	h3 {
+	// 		font-size: 1.5em;
+	// 		margin: 0;
+	// 		padding: .1em 0;
+	// 		font-weight: 400;
+	// 	}
+	// }
 
 	&__description {
-		height: 0;
-		overflow: hidden;
+		width: 66%;
+		cursor: pointer;
+
 		p {
-			font-size: 1em;
+			margin: 0;
+			padding: .1em 0;
+			font-size: 1.35em;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 }

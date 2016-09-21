@@ -1,0 +1,33 @@
+.main-section {
+	height: 100%;
+	position: relative;
+	.board {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .2s;
+
+	}
+
+}
+
+#backlog-radio,
+#main-board-radio,
+#done-radio {
+	display: none;
+}
+
+#backlog-radio:checked ~ .main-section #backlog,
+#main-board-radio:checked ~ .main-section #main-board,
+#done-radio:checked ~ .main-section #done {
+	visibility: visible;
+	opacity: 1;
+}
+
+#backlog-radio:checked ~ .main-header label[for="backlog-radio"],
+#main-board-radio:checked ~ .main-header label[for="main-board-radio"],
+#done-radio:checked ~  .main-header label[for="done-radio"]{
+	opacity: 1;
+}

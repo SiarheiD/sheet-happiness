@@ -1,8 +1,12 @@
 .calendar-day {
+
+	margin-bottom: 2.5em;
+
 	&--separator {
-		padding: 1.2em 0 .5em;
+		padding: 0 0 .5em;
 		font-size: 1em;
 		text-align: center;
+
 		p,
 		&:before,
 		&:after {
