@@ -1,14 +1,17 @@
 .main-section {
-	height: 100%;
+	height: calc(100% - 5rem);
 	position: relative;
+	padding-top: 5rem;
+
 	.board {
 		position: absolute;
 		height: 100%;
 		width: 100%;
+		padding: 1em;
 		opacity: 0;
-		visibility: hidden;
-		transition: opacity .2s;
-
+		display: none;
+		transition: opacity 2.2s, display .01s linear .2s;
+		overflow-x: hidden;
 	}
 
 }
@@ -22,7 +25,8 @@
 #backlog-radio:checked ~ .main-section #backlog,
 #main-board-radio:checked ~ .main-section #main-board,
 #done-radio:checked ~ .main-section #done {
-	visibility: visible;
+	display: block;
+	transition: opacity .2s;
 	opacity: 1;
 }
 
