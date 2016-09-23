@@ -1,30 +1,32 @@
-.calendar-day {
+.agenda-sector {
 
 	margin-bottom: 2.5em;
 
-	&--separator {
+	&__separator {
 		padding: 0 0 .5em;
-		font-size: 1em;
+		font-size: 1rem;
 		text-align: center;
-
-		p,
+		color: $agenda;
+		span,
 		&:before,
 		&:after {
 			display: inline-block;
 			vertical-align: middle;
 		}
 
-		p {
+		span {
 			margin: 0;
 			padding: 0 .5em;
+			font-size: 1.7em;
 		}
 
 		&:before,
 		&:after {
 			content: '';
 			height: 1px;
-			background-color: rgba(200, 200, 200, .5);
+			background-color: rgba(0, 150, 136, .8);
 			width: 30%;
 		}
 	}
+
 }

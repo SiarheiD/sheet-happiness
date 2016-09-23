@@ -1,9 +1,9 @@
 
 	var $tasks = $('.task:not(._ghost)');
 	var $panel = $('.buttons-set');
-	var backlog = $('#backlog');
+	var todo = $('#todo');
 	var done = $('#done');
-	var mainBoard = $('#main-board');
+	var agenda = $('#agenda');
 
 /*============= VIEW =============*/
 	var view = {
@@ -79,13 +79,13 @@
 				$(window).trigger('mouseup');
 					var taskParentBoard = task.closest('.board');
 					if (deltaX < 0) {
-						if (taskParentBoard.is('#main-board')) {
-							backlog.append(task);
+						if (taskParentBoard.is('#agenda')) {
+							todo.append(task);
 						};
 					} else {
-						if (taskParentBoard.is('#backlog')) {
-							mainBoard.append(task);
-						}else if (taskParentBoard.is('#main-board')) {
+						if (taskParentBoard.is('#todo')) {
+							agenda.find('.agenda-sector--hot .agenda-sector__pull').append(task);
+						}else if (taskParentBoard.is('#agenda')) {
 							done.append(task);
 						};
 					};

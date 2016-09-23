@@ -1,20 +1,23 @@
 .main-header {
+	position: absolute;
 	display: flex;
 	font-size: 2rem;
-	padding: .5em 0;
-	position: fixed;
+	line-height: 4rem;
 	width: 100%;
 	background-color: #fff;
 	z-index: 10;
+
+	box-shadow: 0 3px 3px rgba(0,0,0,.4);
 
 	&__tab {
 		flex: 1 1 1em;
 		display: block;
 		text-align: center;
-		opacity: 0.5;
+		opacity: 1;
 		transition: opacity .2s;
 		cursor: pointer;
-
+		font-weight: 300;
+		color: #aaa;
 		&._active {
 			opacity: 1;
 		}

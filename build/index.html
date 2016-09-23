@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- fonts -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic" rel="stylesheet">
+<!-- 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,700&subset=cyrillic" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <!-- style-sheets -->
@@ -19,64 +20,12 @@
 </head>
 <body>
 
-	<div class="wrapper">
+	<main id="main">
+		<div class="wrapper" id="main-container">
 
-		<input type="radio" id="backlog-radio" name="board">
-		<input type="radio" id="main-board-radio" name="board" checked>
-		<input type="radio" id="done-radio" name="board">
+		</div>
 
-		<header class="main-header">
-			<label class="main-header__tab button" for="backlog-radio">
-				<i class="fa fa-clock-o" aria-hidden="true"></i>
-			</label>
-			<label class="main-header__tab button" for="main-board-radio">
-				<i class="fa fa-bars" aria-hidden="true"></i>
-			</label>
-			<label class="main-header__tab button" for="done-radio">
-				<i class="fa fa-check" aria-hidden="true"></i>
-			</label>
-		</header>
-
-		<section class="main-section">
-
-			<section id="backlog" class="board"></section>
-			<section id="done" class="board"></section>
-
-			<section id="main-board" class="board">
-
-				<article class="task task--main-section" data-index='0' data-id="task_1">
-					<div class="task__description container">
-						<p>Погладить рубаху на работу в субботу защита митапа</p>
-					</div>
-				</article>
-
-				<article class="task task--main-section" data-index='1' data-id="task_2">
-					<div class="task__description container">
-						<p>Погладить рубаху на работу в субботу защита митапа</p>
-					</div>
-				</article>
-
-				<article class="task task--main-section" data-index='2' data-id="task_3">
-					<div class="task__description container">
-						<p>Погладить рубаху на работу в субботу защита митапа</p>
-					</div>
-				</article>
-
-			</section>
-		</section>
-
-		<section class="buttons-set">
-
-			<button class="buttons-set__button buttons-set__button--edit"></button>
-
-			<button class="buttons-set__button buttons-set__button--delete"></button>
-
-			<button class="buttons-set__button buttons-set__button--add"></button>
-
-		</section>
-
-
-	</div>
+	</main>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

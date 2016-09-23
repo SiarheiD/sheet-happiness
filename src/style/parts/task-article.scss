@@ -1,5 +1,6 @@
 .task {
-	background-color: rgba(255,255,255,.8);
+	background-color: #fff;
+	box-shadow: 0 1px 2px rgba(0,0,0,.5);
 	.container {
 		padding: 0 1em;
 	}
@@ -8,7 +9,6 @@
 	margin-bottom: .5em;
 
 	&._active {
-		border-color: #f34f30;
 
 		.task__description {
 			height: auto;
@@ -19,15 +19,6 @@
 			}
 		}
 	}
-
-	// &__title {
-	// 	h3 {
-	// 		font-size: 1.5em;
-	// 		margin: 0;
-	// 		padding: .1em 0;
-	// 		font-weight: 400;
-	// 	}
-	// }
 
 	&__description {
 		cursor: pointer;
@@ -40,5 +31,20 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
+	}
+}
+#agenda {
+	.task._active {
+		color: $agenda;
+	}
+}
+#todo {
+	.task._active {
+		color: $todo;
+	}
+}
+#done {
+	.task._active {
+		color: $done;
 	}
 }

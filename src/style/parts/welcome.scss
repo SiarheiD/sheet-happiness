@@ -1,0 +1,99 @@
+.welcome {
+	height: 100%;
+	font-size: 1.6rem;
+	position: relative;
+
+	&__header {
+		line-height: 10rem;
+		background-color: $agenda;
+		color: #fff;
+		text-align: center;
+		h1 {
+			font-size: 2em;
+			font-weight: 200;
+			margin: 0;
+		}
+	}
+
+	.form-wrapper {
+		height: calc(100% - 11.6rem);
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 25rem;
+		margin: 0 auto;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&__err-msg {
+			color: $err;
+		}
+
+		&__text {
+			margin-bottom: 5rem;
+		}
+
+		&__input,
+		&__btn {
+			font-size: 2rem;
+		}
+
+		&__input {
+			background-color: transparent;
+			display: block;
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid $gray;
+			margin-bottom: 1em;
+			padding: .4em 0 .4em .1em;
+			font-size: 1.2em;
+			&._wrong {
+				border-color: $err;
+				&:focus {
+					border-color: $err
+				}
+			}
+			&:focus {
+				outline: none;
+				border-color: $agenda;
+			}
+			&:nth-child(2) {
+				margin-bottom: .4em;
+			}
+		}
+
+		&__btn {
+			display: block;
+			width: 11em;
+			height: 2em;
+			margin: 0 auto .9em;
+			background-color: transparent;
+			border: 1px solid $agenda;
+			border-radius: .2em;
+
+			&--log-in {
+				color: #fff;
+				background-color: $agenda;
+			}
+
+			&--sign-in {
+				color: $agenda;
+			}
+		}
+	}
+
+	&__footer {
+		background-color: $agenda;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		p {
+			text-align: center;
+			line-height: 1.6rem;
+			color: #fff;
+			font-size: .65em;
+		}
+	}
+}

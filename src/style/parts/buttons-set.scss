@@ -1,5 +1,5 @@
 .buttons-set {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	right: 0;
 	font-size: 1em;
@@ -15,7 +15,7 @@
 		border-radius: 50%;
 		background-color: transparent;
 		transition: transform .2s;
-
+		color: #fff;
 		&:not(:last-child) {
 			margin-right: .8em;
 		}
@@ -37,6 +37,7 @@
 
 		&--edit {
 			transform: translateY(200%);
+			background-color: $edit;
 			&:before {
 				content: '\f040';
 			}
@@ -44,6 +45,7 @@
 
 		&--delete {
 			transform: translateY(200%);
+			background-color: $delete;
 			&:before {
 				content: '\f014';
 			}
@@ -51,8 +53,7 @@
 
 		&--add {
 			transform: scale(1.5) translate(-50%, -50%);
-			color: #fff;
-			background-color: #aaa;
+			background-color: $agenda;
 			&:before {
 				content: '\f067';
 			}
@@ -71,8 +72,6 @@
 
 			&--add {
 				transform: none;
-				color: #fff;
-				background-color: #aaa;
 			}
 		}
 	}

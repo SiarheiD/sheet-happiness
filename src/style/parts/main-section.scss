@@ -1,37 +1,49 @@
 .main-section {
 	height: calc(100% - 5rem);
 	position: relative;
-	padding-top: 5rem;
 
 	.board {
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		padding: 1em;
+		padding-top: 5rem;
 		opacity: 0;
 		display: none;
 		transition: opacity 2.2s, display .01s linear .2s;
 		overflow-x: hidden;
+		&::-webkit-scrollbar {
+		    width: 0;
+		}
 	}
 
 }
 
-#backlog-radio,
-#main-board-radio,
+#todo-radio,
+#agenda-radio,
 #done-radio {
 	display: none;
 }
 
-#backlog-radio:checked ~ .main-section #backlog,
-#main-board-radio:checked ~ .main-section #main-board,
+#todo-radio:checked ~ .main-section #todo,
+#agenda-radio:checked ~ .main-section #agenda,
 #done-radio:checked ~ .main-section #done {
 	display: block;
 	transition: opacity .2s;
 	opacity: 1;
 }
 
-#backlog-radio:checked ~ .main-header label[for="backlog-radio"],
-#main-board-radio:checked ~ .main-header label[for="main-board-radio"],
+#todo-radio:checked ~ .main-header label[for="todo-radio"],
+#agenda-radio:checked ~ .main-header label[for="agenda-radio"],
 #done-radio:checked ~  .main-header label[for="done-radio"]{
-	opacity: 1;
+	font-size: 2.3rem;
+}
+#todo-radio:checked ~ .main-header label[for="todo-radio"]{
+	color: $todo;
+}
+#agenda-radio:checked ~ .main-header label[for="agenda-radio"]{
+	color: $agenda;
+}
+#done-radio:checked ~  .main-header label[for="done-radio"]{
+	color: $done;
 }
