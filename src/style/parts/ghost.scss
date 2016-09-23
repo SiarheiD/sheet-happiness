@@ -1,0 +1,14 @@
+._ghost {
+	position: absolute;
+	pointer-events: none;
+}
+
+._sortable {
+	border: 1px dashed #55a;
+	opacity: .5;
+	box-sizing: border-box;
+}
+
+._tr-transform {
+	transition: transform .5s;
+}
