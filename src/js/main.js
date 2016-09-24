@@ -1,4 +1,4 @@
-
+(function($){
 	var $mainContainer = $('#main-container');
 	var tasks = '.task:not(._ghost)';
 	var panel = '.buttons-set';
@@ -48,7 +48,6 @@
 
 			taskSortEnd : function(task){
 				var activeBoard = $(task).closest('.board');
-				console.log(activeBoard);
 				view.ghost.remove();
 				task.removeClass('_sortable');
 				view.ghost = {};
@@ -92,7 +91,7 @@
 			},
 
 			pushTask : function(task, deltaX){
-				$(window).trigger('mouseup');
+				$(document).trigger('mouseup');
 					var taskParentBoard = task.closest('.board');
 							var id = task.data('id');
 							var oldPlace;
@@ -357,7 +356,8 @@
 
 			view.taskSortBegin(task);
 
-			$(tasks).on('mouseenter', function(){
+			$(tasks).on('mouseenter touchenter', function(){
+				// $(this).css('background-color', 'red')
 				view.taskReplace(task, $(this));
 			});
 
@@ -459,10 +459,10 @@
 
 				function setCookie(name, value, options) {
 				  options = options || {};
-				  var expires = options.expires || 100;
+				  var expires = options.expires || 1000;
 				  if (typeof expires == "number" && expires) {
 				    var d = new Date();
-				    d.setTime(d.getTime() + expires * 1000);
+				    d.setTime(d.getTime() + expires * 1000 * 60 * 60);
 				    expires = options.expires = d;
 				  }
 				  if (expires && expires.toUTCString) {
@@ -536,10 +536,8 @@
 				var userPass = getCookie('sh_user_pass');
 				console.log(userName, userPass)
 				if (userName && userPass) {
-					console.log('try')
 					tryToReg(userName, userPass, 'login');
 				} else {
-					console.log('ups')
 
 					loadWelcome();
 				}
@@ -563,31 +561,61 @@
 				$(document).on('taskslideup', controller.taskSlideUp);
 				$(document).on('taskeditioncomplete', controller.taskEdComplete);
 
-				$(document).on('mousedown', tasks, function(evt){
-					if (evt.which == 1) {
-						evt.preventDefault();
+				$(document).on('mousedown touchstart', tasks, function(evt){
+							evt.preventDefault();
+							evt.originalEvent.preventDefault();
 						var action = '';
 						var moved = false; // флаг был ли двинут таск
 						// тут может начинаться 4 совбытия
 						// scroll slide click sort
 						var task = $(this);
-						var downOn = {
-							x: evt.clientX,
-							y: evt.clientY
-						};
+						var moveX, moveY;
+						var downOn = {};
+
+						if(evt.originalEvent.touches){
+							downOn = {
+								x: evt.originalEvent.touches[0].clientX,
+								y: evt.originalEvent.touches[0].clientY
+							};
+							moveX = function(evt) {
+								return evt.originalEvent.changedTouches[0].clientX;
+							}
+							moveY = function(evt) {
+								return evt.originalEvent.changedTouches[0].clientY;
+							}
+						} else
+						if (evt.clientX) {
+							downOn = {
+								x: evt.clientX,
+								y: evt.clientY
+							};
+							moveX = function(evt) {
+								return evt.clientX;
+							};
+							moveY = function(evt) {
+								return evt.clientY
+							};
+						} ;
+
+
 
 						var listenSort = setTimeout(function(){
 							action = 'sort';
 							moved = true;
+							evt.preventDefault();
+							evt.originalEvent.preventDefault();
 							task.trigger('tasksortbegin');
 						}, 500);
 
 
-						$(window).on('mousemove', function(evt){
+						$(document).on('mousemove touchmove', function(evt){
 							evt.preventDefault();
+							evt.originalEvent.preventDefault();
+
+
 							var moveOn = {
-								x: evt.clientX,
-								y: evt.clientY
+								x: moveX(evt),
+								y: moveY(evt)
 							};
 
 							var delta = {
@@ -596,15 +624,21 @@
 							};
 
 							if (action == 'sort') {
+								evt.preventDefault();
+								evt.originalEvent.preventDefault();
 								task.trigger('tasksort', delta.y);
 							};
 
 							if (action == 'slide') {
+								evt.preventDefault();
+								evt.originalEvent.preventDefault();
+
 								task.trigger('taskslide', delta.x);
 							};
 
 							if (Math.abs(delta.x) > 5) {
 								if (!action){
+									evt.preventDefault();
 									action = 'slide';
 									clearTimeout(listenSort);
 									moved = true;
@@ -622,8 +656,9 @@
 							};
 						});
 
-						$(window).on('mouseup', function(evt){
-							$(window).off('mousemove');
+						$(document).on('mouseup touchend', function(evt){
+							$(document).off('mousemove');
+							$(document).off('touchmove');
 
 							if (action == 'sort'){
 								task.trigger('sortend');
@@ -643,10 +678,10 @@
 								};
 							};
 						});
-					}
+					// }
 				});
 
-			}
+			},
 
 		};
 
@@ -654,3 +689,4 @@
 
 	}());
 
+}(jQuery));

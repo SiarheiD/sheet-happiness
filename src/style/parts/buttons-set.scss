@@ -11,11 +11,24 @@
 		font-size: 2em;
 		padding: 0;
 		border: none;
-		box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+		box-shadow: 0 1px 3px rgba(0,0,0,.5);
 		border-radius: 50%;
 		background-color: transparent;
 		transition: transform .2s;
 		color: #fff;
+
+		&:hover {
+			box-shadow: 0 2px 5px rgba(0,0,0,.4);
+			width: 2.05em;
+			font-size: 2.05em;
+		}
+		&:active {
+			width: 2em;
+			font-size: 2em;
+		}
+		&:focus{
+			outline: none;
+		}
 		&:not(:last-child) {
 			margin-right: .8em;
 		}
@@ -54,6 +67,7 @@
 		&--add {
 			transform: scale(1.5) translate(-50%, -50%);
 			background-color: $agenda;
+
 			&:before {
 				content: '\f067';
 			}
