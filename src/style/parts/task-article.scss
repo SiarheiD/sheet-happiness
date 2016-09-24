@@ -1,6 +1,9 @@
 .task {
 	background-color: #fff;
 	box-shadow: 0 1px 2px rgba(0,0,0,.5);
+	&._task-edit {
+		display: none;
+	}
 	.container {
 		padding: 0 1em;
 	}
@@ -46,5 +49,39 @@
 #done {
 	.task._active {
 		color: $done;
+	}
+}
+
+.art-form {
+	font-size: 2rem;
+	textarea {
+		width: 100%;
+		height: 5rem;
+		padding: .2em .7em;
+	}
+
+
+	button {
+		display: block;
+		width: 22rem;
+		margin: 0 auto 5rem;
+		background-color: $agenda;
+		border: none;
+		color: #fff;
+		border-radius: .2em;
+		padding: .1em 0;
+		box-shadow: 0 1px 3px rgba(0,0,0,.5);
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			transform: scale(1.01);
+			box-shadow: 0 2px 5px rgba(0,0,0,.4);
+		}
+		&:active {
+			outline: none;
+			transform: scale(.98);
+			box-shadow: 0 1px 3px rgba(0,0,0,.4);
+		}
 	}
 }

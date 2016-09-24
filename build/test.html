@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Sheet happiness</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- fonts -->
+<!-- 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,700&subset=cyrillic" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- style-sheets -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+	<main id="main">
+		<div class="wrapper" id="main-container">
+<input type="radio" id="todo-radio" name="board">
+<input type="radio" id="agenda-radio" name="board" checked>
+<input type="radio" id="done-radio" name="board">
+
+<header class="main-header">
+	<label class="main-header__tab button" for="todo-radio">
+		Todo
+	</label>
+	<label class="main-header__tab button" for="agenda-radio">
+		Agenda
+	</label>
+	<label class="main-header__tab button" for="done-radio">
+		Done
+	</label>
+</header>
+
+<section class="main-section">
+
+	<section id="todo" class="board"></section>
+	<section id="done" class="board"></section>
+	<section id="agenda" class="board">
+		<article class="task task--main-section">
+			<div class="task__description container">
+				<p>Погладить рубаху на работу в субботу защита митапа</p>
+			</div>
+		</article>
+		<article class="task task--main-section">
+			<div class="task__description container">
+				<p>Погладить рубаху на работу в субботу защита митапа</p>
+			</div>
+		</article>
+		<article class="task task--main-section">
+			<div class="task__description container">
+				<p>Погладить рубаху на работу в субботу защита митапа</p>
+			</div>
+		</article>
+		<div class="newArtForm art-form">
+			<textarea name="content"></textarea>
+			<button class="endEdit art-form__button">ok</button>
+		</div>
+
+	<!-- 	<section class="agenda-sector agenda-sector--hot">
+			<div class="agenda-sector__separator"><span><i class="fa fa-bolt" aria-hidden="true"></i></span></div>
+
+			<div class="agenda-sector__pull">
+
+			</div>
+		</section>
+
+		<section class="agenda-sector agenda-sector--cold">
+			<div class="agenda-sector__separator"><span><i class="fa fa-clock-o" aria-hidden="true"></i></span></div>
+			<div class="agenda-sector__pull">
+
+			</div>
+		</section> -->
+	</section>
+
+
+</section>
+
+<section class="buttons-set">
+
+	<button class="buttons-set__button buttons-set__button--edit"></button>
+
+	<button class="buttons-set__button buttons-set__button--delete"></button>
+
+	<button class="buttons-set__button buttons-set__button--add"></button>
+
+</section>
+<div class="welcome__preloader"></div>
+		</div>
+	</main>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+</body>
+</html>

@@ -2,7 +2,19 @@
 	height: 100%;
 	font-size: 1.6rem;
 	position: relative;
-
+	&__preloader {
+		position: absolute;
+		display: none;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background:  url(../img/bolt-preloader.gif) no-repeat 50% 50%;
+		background-size: 100%;
+		&._preload {
+			display: block;
+		}
+	}
 	&__header {
 		line-height: 10rem;
 		background-color: $agenda;
